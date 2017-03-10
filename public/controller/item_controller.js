@@ -82,7 +82,6 @@ function loadTable() {
                     btnEdit.appendTo($("#linkEdit"+index+""));
                 }
             }else{
-                alert(result);
             }
         });
 }
