@@ -2,7 +2,7 @@
 <html class="english">
 <head>
     <meta charset="UTF-8"/>
-    <title>Point Of Sale | Online POS Software</title>
+    <title>Online POS Application with Node.js</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="stylesheet" type="text/css" href="css/all.css"/>
     <script src="js/all.js" type="text/javascript" charset="UTF-8"></script>
@@ -20,7 +20,7 @@
     <div class="left-bar hidden-print">
         <div class="admin-logo" style="">
             <div class="logo-holder pull-left">
-                <img src="https://demo.phppointofsale.com/assets/img/header_logo.png" class="hidden-print logo"
+                <img src="assets/img/header_logo.png" class="hidden-print logo"
                      id="header-logo" alt=""/></div>
         </div>
         <ul class="list-unstyled menu-parent" id="mainMenu">
@@ -79,7 +79,7 @@
                     <li class="dropdown">
                         <a tabindex="-1" href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown"
                            role="button" aria-expanded="false"><span class="avatar-holder">
-<img src="https://demo.phppointofsale.com/assets/assets/images/avatar-default.jpg" alt=""/></span>
+<img src="assets/assets/images/avatar-default.jpg" alt=""/></span>
                             <span class="avatar_info hidden-sm">John Doe</span></a>
                         <ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop"
                             data-wow-duration="1500ms" role="menu">
@@ -96,31 +96,7 @@
 
         <!--Content Box-->
         <div class="main-content">
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    var table_columns = ['', 'phppos_people' + '.person_id', 'last_name', 'email', 'phone_number'];
-
-                    enable_sorting("http://demo.phppointofsale.com/index.php/customers/sorting", table_columns, 100, "last_name", "asc");
-                    enable_select_all();
-                    enable_checkboxes();
-                    enable_row_selection();
-                    enable_search('http://demo.phppointofsale.com/index.php/customers', "You have selected one or more rows, these will no longer be selected after your search. Are you sure you want to submit this search?");
-                    enable_email('http://demo.phppointofsale.com/index.php/customers/mailto');
-                    enable_delete("Are you sure you want to delete the selected customers?", "You have not selected any customers to delete");
-                    enable_cleanup("Are you sure you want to clean ALL deleted customers? (This will remove account numbers from deleted customers so they can be reused)");
-
-
-                    $('#labels').click(function () {
-                        var selected = get_selected_values();
-                        if (selected.length == 0) {
-                            bootbox.alert("You must select at least one person for mmailing labels");
-                            return false;
-                        }
-
-                        $(this).attr('href', 'http://demo.phppointofsale.com/index.php/customers/mailing_labels/' + selected.join('~'));
-                    });
-                });
-            </script>
+            
             <div class="manage_buttons">
                 <div class="row">
                     <div class="col-md-5">
@@ -160,8 +136,7 @@
                             <table class="tablesorter table  table-hover" id="tblCustomer">
                                 <thead>
                                     <tr>
-<!--                                        <th class='leftmost'><input type="checkbox" id="select_all"/><label
-                                                for="select_all"><span></span></label></th>-->
+
                                         <th>Customer ID</th>
                                         <th>Name</th>
                                         <th>Address</th>
@@ -181,10 +156,9 @@
 
         <div id="footers" class="col-md-12 hidden-print text-center">
             Please visit our
-            <a tabindex="-1" href="http://phppointofsale.com" target="_blank">website</a> to learn the latest
+            <a tabindex="-1" href="http://www.4rkme.com" target="_blank">website</a> to learn the latest
             information about the project.
-            <span class="text-info">You are using PHP Point Of Sale Version <span class="badge bg-primary"> 15.0</span></span>
-            Built on 2017-03-01 09:02 EST
+            <span class="text-info">You are using WEB POS Version <span class="badge bg-primary"> 1.0</span></span>
         </div>
     </div>
 
