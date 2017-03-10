@@ -76,6 +76,7 @@ $(document).ready(function () {
         if( validate.isEmpty(itemDetail)){
             $("#actvItem").focus().select();
             alert("Please add item");
+            
             return ;
         }
         if(validate.isEmpty(customerDetail)){

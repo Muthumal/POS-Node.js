@@ -6,7 +6,6 @@ $(document).ready(function () {
        var query = window.location.search.substring(1);
        var vars = query.split("?");
        this.id=vars[0];
-        alert(this.id);
        
         };
         getQueryVariable();
@@ -32,7 +31,6 @@ function loadTable() {
 //                btnEdit.appendTo($("#linkEdit" + index + ""));
             }
         } else {
-            alert(result);
         }
     });
 }

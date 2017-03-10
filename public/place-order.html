@@ -1,316 +1,321 @@
 <!DOCTYPE html>
 <html class="english">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Online POS Application with Node.js</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <link rel="stylesheet" type="text/css" href="css/all.css"/>
-    <script src="js/all.js" type="text/javascript" charset="UTF-8"></script>
-    <script src="new/iframeResizer.contentWindow.min.js"></script>
-    <script type="text/javascript" src="js/my/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/my/validate.js"></script>
-    <script type="text/javascript" src="controller/place_order_controller.js"></script>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Online POS Application with Node.js</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <link rel="stylesheet" type="text/css" href="css/all.css"/>
+        <script src="js/all.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="new/iframeResizer.contentWindow.min.js"></script>
+        <script type="text/javascript" src="js/my/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/my/validate.js"></script>
+        <script type="text/javascript" src="controller/place_order_controller.js"></script>
 
-</head>
+    </head>
 
-<body>
-<div class="modal fade hidden-print" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
-<div class="modal fade hidden-print" id="myModalDisableClose" tabindex="-1" role="dialog" aria-hidden="true"
-     data-keyboard="false" data-backdrop="static"></div>
-<div class="wrapper ">
-    <!--Left Navigation bar-->
-    <div class="left-bar hidden-print">
-        <div class="admin-logo" style="">
-            <div class="logo-holder pull-left">
-                <img src="assets/img/header_logo.png" class="hidden-print logo"
-                     id="header-logo" alt=""/></div>
-        </div>
-        <ul class="list-unstyled menu-parent" id="mainMenu">
-            <li>
-                <a tabindex="-1" href="index.html" class="waves-effect waves-light">
-                    <i class="icon ti-dashboard"></i>
-                    <span class="text">Dashboard</span>
-                </a></li>
-            <li>
-                <a tabindex="-1" href="customer.html"
-                   class="waves-effect waves-light">
-                    <i class="icon ti-user"></i>
-                    <span class="text">Customers</span>
-                </a>
-            </li>
-            <li>
-                <a tabindex="-1" href="item.html"
-                   class="waves-effect waves-light">
-                    <i class="icon ti-harddrive"></i>
-                    <span class="text">Items</span>
-                </a>
-            </li>
-            <li class="active">
-                <a tabindex="-1" href="place-order.html"
-                   class="waves-effect waves-light">
-                    <i class="icon ti-shopping-cart"></i>
-                    <span class="text">Place Order</span>
-                </a>
-            </li>
-            <li>
-                <a tabindex="-1" href="order.html"
-                   class="waves-effect waves-light">
-                    <i class="icon ti-shopping-cart"></i>
-                    <span class="text">Orders</span>
-                </a>
-            </li>
-            <li>
-                <a href=""
-                   tabindex="-1"><i class="icon ti-power-off"></i><span class="text">Logout</span></a>
-            </li>
-        </ul>
-    </div>
-    <!--/Left Navigation Bar-->
-
-    <div class="content" id="content">
-        <div class="overlay hidden-print"></div>
-
-        <!--Top Navigation bar-->
-        <div class="top-bar hidden-print">
-
-            <nav class="navbar navbar-default top-bar">
-                <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
-                <div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
-                    <a tabindex="-1" href="">Dashboard</a></div>
-
-
-                <ul class="nav navbar-nav navbar-right top-elements">
-                    <li class="dropdown">
-                        <a tabindex="-1" href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown"
-                           role="button" aria-expanded="false"><span class="avatar-holder">
-<img src="assets/assets/images/avatar-default.jpg" alt=""/></span>
-                            <span class="avatar_info hidden-sm">John Doe</span></a>
-                        <ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop"
-                            data-wow-duration="1500ms" role="menu">
-                            <li>
-                                <a href=""
-                                   class="logout_button" tabindex="-1"><i class="ion-power"></i><span class="text">Logout</span></a>
-                            </li>
-                        </ul>
+    <body>
+        <div class="modal fade hidden-print" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        <div class="modal fade hidden-print" id="myModalDisableClose" tabindex="-1" role="dialog" aria-hidden="true"
+             data-keyboard="false" data-backdrop="static"></div>
+        <div class="wrapper ">
+            <!--Left Navigation bar-->
+            <div class="left-bar hidden-print">
+                <div class="admin-logo" style="">
+                    <div class="logo-holder pull-left">
+                        <img src="img/header_logo.png" class="hidden-print logo"
+                             id="header-logo" alt=""/></div>
+                </div>
+                <ul class="list-unstyled menu-parent" id="mainMenu">
+                    <li>
+                        <a tabindex="-1" href="index.html" class="waves-effect waves-light">
+                            <i class="icon ti-dashboard"></i>
+                            <span class="text">Dashboard</span>
+                        </a></li>
+                    <li>
+                        <a tabindex="-1" href="customer.html"
+                           class="waves-effect waves-light">
+                            <i class="icon ti-user"></i>
+                            <span class="text">Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="item.html"
+                           class="waves-effect waves-light">
+                            <i class="icon ti-harddrive"></i>
+                            <span class="text">Items</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a tabindex="-1" href="place-order.html"
+                           class="waves-effect waves-light">
+                            <i class="icon ti-shopping-cart"></i>
+                            <span class="text">Place Order</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="order.html"
+                           class="waves-effect waves-light">
+                            <i class="icon ti-shopping-cart"></i>
+                            <span class="text">Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""
+                           tabindex="-1"><i class="icon ti-power-off"></i><span class="text">Logout</span></a>
                     </li>
                 </ul>
-            </nav>
-        </div>
-        <!--/Top Navigation bar-->
+            </div>
+            <!--/Left Navigation Bar-->
+
+            <div class="content" id="content">
+                <div class="overlay hidden-print"></div>
+
+                <!--Top Navigation bar-->
+                <div class="top-bar hidden-print">
+
+                    <nav class="navbar navbar-default top-bar">
+                        <div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i></div>
+                        <div class="nav navbar-nav top-elements navbar-breadcrumb hidden-xs">
+                            <a tabindex="-1" href="">Dashboard</a></div>
 
 
-        <!--Content Box-->
-        <div class="main-content">
-            <div id="sales_page_holder">
-                <div id="sale-grid-big-wrapper" class="clearfix register">
-                    <div class="row">
-                        <div class="clearfix" id="category_item_selection_wrapper">
-                            <div class="">
-                                <div class="spinner" id="grid-loader" style="display:none">
-                                    <div class="rect1"></div>
-                                    <div class="rect2"></div>
-                                    <div class="rect3"></div>
-                                </div>
-                                <div class="text-center">
-                                    <div id="grid_selection" class="btn-group" role="group">
-                                        <a href="javascript:void(0);" class="btn active btn btn-grid" id="by_category">Categories</a>
-                                        <a href="javascript:void(0);" class=" btn btn-grid" id="by_tag">Tags</a>
+                        <ul class="nav navbar-nav navbar-right top-elements">
+                            <li class="dropdown">
+                                <a tabindex="-1" href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown"
+                                   role="button" aria-expanded="false"><span class="avatar-holder">
+                                        <img src="assets/images/avatar-default.jpg" alt=""/></span>
+                                    <span class="avatar_info hidden-sm">4rkME</span></a>
+                                <ul class="dropdown-menu user-dropdown animated fadeInUp wow avatar_drop neat_drop"
+                                    data-wow-duration="1500ms" role="menu">
+                                    <li>
+                                        <a href=""
+                                           class="logout_button" tabindex="-1"><i class="ion-power"></i><span class="text">Logout</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--/Top Navigation bar-->
+
+
+                <!--Content Box-->
+                <div class="main-content">
+                    <div id="sales_page_holder">
+                        <div id="sale-grid-big-wrapper" class="clearfix register">
+                            <div class="row">
+                                <div class="clearfix" id="category_item_selection_wrapper">
+                                    <div class="">
+                                        <div class="spinner" id="grid-loader" style="display:none">
+                                            <div class="rect1"></div>
+                                            <div class="rect2"></div>
+                                            <div class="rect3"></div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div id="grid_selection" class="btn-group" role="group">
+                                                <a href="javascript:void(0);" class="btn active btn btn-grid" id="by_category">Categories</a>
+                                                <a href="javascript:void(0);" class=" btn btn-grid" id="by_tag">Tags</a>
+                                            </div>
+                                        </div>
+                                        <div id="grid_breadcrumbs"></div>
+                                        <div id="category_item_selection" class="row register-grid"></div>
+                                        <div class="pagination hidden-print alternate text-center"></div>
                                     </div>
                                 </div>
-                                <div id="grid_breadcrumbs"></div>
-                                <div id="category_item_selection" class="row register-grid"></div>
-                                <div class="pagination hidden-print alternate text-center"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="register_container" class="sales clearfix">
-                    <div class="row register">
-                        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 no-padding-right no-padding-left">
-                            <div class="register-box register-items-form">
-                                <a tabindex="-1" href="#" class="dismissfullscreen hidden"><i
-                                        class="ion-close-circled"></i></a>
+                        <div id="register_container" class="sales clearfix">
+                            <div class="row register">
+                                <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 no-padding-right no-padding-left">
+                                    <div class="register-box register-items-form">
+                                        <a tabindex="-1" href="#" class="dismissfullscreen hidden"><i
+                                                class="ion-close-circled"></i></a>
 
-                                <div class="item-form">
-                                    <form action="" id="add_item_form"
-                                          class="form-inline" autocomplete="off" method="post" accept-charset="utf-8">
-                                        <div class="input-group input-group-mobile contacts"><span
-                                                class="input-group-addon"><a href="" class="none add-new-item"
-                                                                             title="New Item" id="new-item-mobile"
-                                                                             tabindex="-1"><i
-                                                class='icon ti-pencil-alt'></i> <span
-                                                class='register-btn-text'>New Item</span></a> </span><span
-                                                    class="input-group-addon grid-buttons "><a href="add-item.html"
-                                                                                           class="none show-grid"
-                                                                                           tabindex="-1"
-                                                                                           title="Show Grid"><i
-                                                class='icon ti-layout'></i> <span
-                                                class='register-btn-text'>Item Details</span></a> <a href="item.html"
-                                                                                                     class="none hide-grid hidden"
-                                                                                                     tabindex="-1"
-                                                                                                     title="Hide Grid"><i
-                                                class='icon ti-layout'></i></a> </span>
-                                        </div>
-                                        <div class="input-group contacts register-input-group">
+                                        <div class="item-form">
+                                            <form action="" id="add_item_form"
+                                                  class="form-inline" autocomplete="off" method="post" accept-charset="utf-8">
+                                                <div class="input-group input-group-mobile contacts"><span
+                                                        class="input-group-addon"><a href="" class="none add-new-item"
+                                                                                 title="New Item" id="new-item-mobile"
+                                                                                 tabindex="-1"><i
+                                                                class='icon ti-pencil-alt'></i> <span
+                                                                class='register-btn-text'>New Item</span></a> </span><span
+                                                        class="input-group-addon grid-buttons "><a href="add-item.html"
+                                                                                               class="none show-grid"
+                                                                                               tabindex="-1"
+                                                                                               title="Show Grid"><i
+                                                                class='icon ti-layout'></i> <span
+                                                                class='register-btn-text'>Item Details</span></a> <a href="item.html"
+                                                                                                             class="none hide-grid hidden"
+                                                                                                             tabindex="-1"
+                                                                                                             title="Hide Grid"><i
+                                                                class='icon ti-layout'></i></a> </span>
+                                                </div>
+                                                <div class="input-group contacts register-input-group">
 
-                                            <div class="spinner" id="ajax-loader" style="display:none">
-                                                <div class="rect1"></div>
-                                                <div class="rect2"></div>
-                                                <div class="rect3"></div>
-                                            </div>
-                                            <span class="input-group-addon"><a href="add-item.html" class="none add-new-item"
-                                                                               title="New Item" id="new-item"
-                                                                               tabindex="-1"><i
-                                                    class='icon ti-pencil-alt'></i></a> </span>
-                                            <input type="text" id="actvItem" name="item" class="add-item-input pull-left"
-                                                   placeholder="Enter item name">
-                                            
-                                            <span>
+                                                    <div class="spinner" id="ajax-loader" style="display:none">
+                                                        <div class="rect1"></div>
+                                                        <div class="rect2"></div>
+                                                        <div class="rect3"></div>
+                                                    </div>
+                                                    <span class="input-group-addon"><a href="add-item.html" class="none add-new-item"
+                                                                                       title="New Item" id="new-item"
+                                                                                       tabindex="-1"><i
+                                                                class='icon ti-pencil-alt'></i></a> </span>
+                                                    <input type="text" id="actvItem" name="item" class="add-item-input pull-left"
+                                                           placeholder="Enter item name">
+
+                                                    <span>
                                                         <input type="text" id="txtItemQty" name="item" class="add-item-input pull-left"
                                                                placeholder="Enter item quantity" style="width: 50%">
                                                         <input type="text" id="txtOnHandQty" name="item" class="add-item-input pull-left"
                                                                placeholder="Enter item quantity on Hand" style="width: 50%">
-                                                        
+
                                                     </span>
-                                            
-                                            <span class="input-group-addon grid-buttons " id="btnAddItemToCart"><a 
-                                                                                             class="none show-grid"
-                                                                                             tabindex="-1"
-                                                                                             title="Show Grid"><i
-                                                        class='icon ti-layout' ></i> Add Item</a></span>
-                                                    
+
+                                                    <span class="input-group-addon grid-buttons " id="btnAddItemToCart"><a 
+                                                            class="none show-grid"
+                                                            tabindex="-1"
+                                                            title="Show Grid"><i
+                                                                class='icon ti-layout' ></i> Add Item</a></span>
+
+                                                </div>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div>
+
+                                    <div class="register-box register-items paper-cut">
+                                        <div class="register-items-holder">
+                                            <table id="tblItemCart" class="table table-hover">
+                                                <thead>
+                                                    <tr class="register-items-header">                                            
+                                                        <th >Item ID</th>
+                                                        <th >Descirption</th>
+                                                        <th >Unit Price</th>
+                                                        <th >Qty.</th>
+                                                        <th>Amount</th>
+                                                        <!--<th>&nbsp&nbsp&nbsp</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="register-item-content" id="tbodyItemCart">
+                                                    <tr class="cart_content_area">
+                                                        <td colspan='6'>
+                                                            <div class='text-center text-warning'><h3>There are no items in the cart<span
+                                                                        class="flatGreenc"> [Sales]</span></h3></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+
                                 </div>
-                            </div>
 
-                            <div class="register-box register-items paper-cut">
-                                <div class="register-items-holder">
-                                    <table id="tblItemCart" class="table table-hover">
-                                        <thead>
-                                        <tr class="register-items-header">                                            
-                                            <th >Item ID</th>
-                                            <th >Descirption</th>
-                                            <th >Unit Price</th>
-                                            <th >Qty.</th>
-                                            <th>Amount</th>
-                                            <!--<th>&nbsp&nbsp&nbsp</th>-->
-                                        </tr>
-                                        </thead>
-                                        <tbody class="register-item-content" id="tbodyItemCart">
-                                            <tr class="cart_content_area">
-                                            <td colspan='6'>
-                                                <div class='text-center text-warning'><h3>There are no items in the cart<span
-                                                        class="flatGreenc"> [Sales]</span></h3></div>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+
+                                <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 no-padding-right">
+                                    <div class="register-box register-right">
+
+
+                                        <div class="customer-form">
+
+                                            <form action=""
+                                                  id="select_customer_form" autocomplete="off" class="form-inline" method="post"
+                                                  accept-charset="utf-8">
+                                                <div class="input-group contacts"><span class="input-group-addon"><a
+                                                            href="add-customer.html"
+                                                            class="none" title="New Customer" id="new-customer" tabindex="-1"><i
+                                                                class='ion-person-add'></i></a> </span><input type="text" id="actvCustomer"
+                                                                                                  name="customer"
+                                                                                                  class="add-customer-input"
+                                                                                                  placeholder="Type customer name...">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="register-box register-summary paper-cut">
+
+                                        <div class="tier-group">
+                                            <a tabindex="-1" href="#" class="item-tier ">
+                                                Item Tiers: <span class="selected-tier">None</span>
+                                            </a>
+                                            <div class="list-group item-tiers">
+                                                <a tabindex="-1" href="#" data-value="0" class="list-group-item">None</a>
+                                                <a tabindex="-1" href="#" data-value="1" class="list-group-item">min</a>
+                                                <a tabindex="-1" href="#" data-value="2" class="list-group-item">max</a>
+                                                <a tabindex="-1" href="#" data-value="3" class="list-group-item">med</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="tier-group">
+                                            <a href="#" class="select-sales-person ">
+                                                Sales person: <span class="selected-sales-person">John Doe</span>
+                                            </a>
+                                            <div class="list-group select-sales-persons">
+                                                <a href="#" data-value="" class="list-group-item">Not set</a>
+                                                <a href="#" data-value="1" class="list-group-item">John Doe</a>
+                                                <a href="#" data-value="8" class="list-group-item">Hugo www</a>
+                                            </div>
+                                        </div>
+                                        <ul class="list-group">
+
+                                            <li class="sub-total list-group-item">
+                                                <span class="key" >Sub Total:</span>
+                                                <span class="value" ><span id="txtSubTotal">
+                                                        $0.00
+                                                    </span></span>
+                                            </li>
+                                        </ul>
+                                        <div class="amount-block">
+                                            <div class="content right total amount">
+                                                <div class="side-heading" >
+                                                    Total
+                                                </div>
+                                                <div class="amount total-amount" data-speed="1000" data-currency="$"
+                                                     data-decimals="2"><span id="txtTotal">
+                                                        $0.00
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div id="finish_sale" class="finish-sale">
+                                            <form action=""
+                                                  id="finish_sale_form" autocomplete="off" method="post" accept-charset="utf-8">
+                                                <div class="form-actions pull-right">
+                                                    <input type="button" name="btnAddOrder" value="Submit" id="btnAddOrder"
+                                                           class=" submit_button btn btn-primary" style="width: auto"/>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="change-date" style="height: 20px">
+                                            <span id="outPlaceOrder"></span>
+
+                                        </div>
+
+                                    </div>
                                 </div>
-
-
                             </div>
 
                         </div>
 
 
-                        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 no-padding-right">
-                            <div class="register-box register-right">
 
-
-                                <div class="customer-form">
-
-                                    <form action=""
-                                          id="select_customer_form" autocomplete="off" class="form-inline" method="post"
-                                          accept-charset="utf-8">
-                                        <div class="input-group contacts"><span class="input-group-addon"><a
-                                                    href="add-customer.html"
-                                                class="none" title="New Customer" id="new-customer" tabindex="-1"><i
-                                                class='ion-person-add'></i></a> </span><input type="text" id="actvCustomer"
-                                                                                              name="customer"
-                                                                                              class="add-customer-input"
-                                                                                              placeholder="Type customer name...">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="register-box register-summary paper-cut">
-
-                                <div class="tier-group">
-                                    <a tabindex="-1" href="#" class="item-tier ">
-                                        Item Tiers: <span class="selected-tier">None</span>
-                                    </a>
-                                    <div class="list-group item-tiers">
-                                        <a tabindex="-1" href="#" data-value="0" class="list-group-item">None</a>
-                                        <a tabindex="-1" href="#" data-value="1" class="list-group-item">min</a>
-                                        <a tabindex="-1" href="#" data-value="2" class="list-group-item">max</a>
-                                        <a tabindex="-1" href="#" data-value="3" class="list-group-item">med</a>
-                                    </div>
-                                </div>
-
-                                <div class="tier-group">
-                                    <a href="#" class="select-sales-person ">
-                                        Sales person: <span class="selected-sales-person">John Doe</span>
-                                    </a>
-                                    <div class="list-group select-sales-persons">
-                                        <a href="#" data-value="" class="list-group-item">Not set</a>
-                                        <a href="#" data-value="1" class="list-group-item">John Doe</a>
-                                        <a href="#" data-value="8" class="list-group-item">Hugo www</a>
-                                    </div>
-                                </div>
-                                <ul class="list-group">
-
-                                    <li class="sub-total list-group-item">
-                                        <span class="key" >Sub Total:</span>
-                                        <span class="value" ><span id="txtSubTotal">
-                                            $0.00
-                                            </span></span>
-                                    </li>
-                                </ul>
-                                <div class="amount-block">
-                                    <div class="content right total amount">
-                                        <div class="side-heading" >
-                                            Total
-                                        </div>
-                                        <div class="amount total-amount" data-speed="1000" data-currency="$"
-                                             data-decimals="2"><span id="txtTotal">
-                                            $0.00
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div id="finish_sale" class="finish-sale">
-                                    <form action=""
-                                          id="finish_sale_form" autocomplete="off" method="post" accept-charset="utf-8">
-                                        <div class="form-actions pull-right">
-                                            <input type="button" name="btnAddOrder" value="Submit" id="btnAddOrder"
-                                                   class=" submit_button btn btn-primary" style="width: auto"/>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="change-date" style="height: 20px">
-                                    <span id="outPlaceOrder"></span>
-                                            
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
-
+                </div>
+                <!--/Content Box-->
+                <div id="footers" class="col-md-12 hidden-print text-center">
+                    Please visit our
+                    <a tabindex="-1" href="http://www.4rk.me" target="_blank">website</a> to learn the latest
+                    information about the project.
+                    <span class="text-info">You are using WEB POS Version <span class="badge bg-primary"> 1.0</span></span>
                 </div>
 
-                
-
             </div>
+
         </div>
-        <!--/Content Box-->
-
-
-    </div>
-
-</div>
-</body>
+    </body>
 </html>

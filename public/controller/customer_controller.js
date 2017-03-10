@@ -38,10 +38,10 @@ $(document).ready(function (){
             dataType: 'json',
             method:'POST'                       
         }).done(function (json) {
-//            alert(json.result);
+
                 
             if(json.result==="success"){
-//                alert(json.result);            
+           
                 $("#span-txt").html("Customer has been successfully added...").css("color","green");
                 $("#span-txt").css("display","inline");
                 
@@ -124,7 +124,6 @@ function loadTable() {
                     btnEdit.appendTo($("#linkEdit"+index+""));
                 }
             }else{
-                alert(result);
             }
         });
 }
