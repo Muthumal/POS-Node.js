@@ -1,0 +1,4 @@
+this.imageRollover=function(){xOffset=-500;yOffset=100;$(document).on({mouseenter:function(e)
+{this.t=this.title;this.title="";var c=(this.t!="")?"<br/>"+ this.t:"";$("body").append("<p id='rollover_image'><img src='"+ this.href+"' alt='Image preview' />"+ c+"</p>");$("#rollover_image").css("top",(e.pageY- yOffset)+"px").css("left",(e.pageX+ xOffset)+"px").fadeIn("fast");},mouseleave:function(e)
+{this.title=this.t;$("#rollover_image").remove();}},"a.rollover");$(document).on('mousemove',"a.rollover",function(e)
+{$("#rollover_image").css("top",(e.pageY- yOffset)+"px").css("left",(e.pageX+ xOffset- 30)+"px");});};$(document).ready(function(){imageRollover();});
